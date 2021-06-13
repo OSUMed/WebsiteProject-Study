@@ -1,1 +1,1 @@
-# 290WebsiteProject
+# Website Project: Study Assistant
