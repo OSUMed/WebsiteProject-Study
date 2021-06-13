@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="top-div">
+    <a href="/" style="text-decoration: none">
+      <h1>Study Assistant</h1>
+    </a>
+    <p id="h1-helper">A site that helps <span class="title_style">you</span> study</p>
+
+    <a class="Main-Links" href="/Pomodoro">My Pomodoro</a>
+    <a class="ToDo-Link" href="/ToDoList">My ToDoList</a>
+    <a class="Main-Links" href="/Brainstorm">Brainstorm</a>
+    <hr class="top-hr">
+
+
+  </div>
+
+  <div class="container">
+    <a class="buttonL" onclick="showSlides(-1)">&#10094;</a>
+    <div class="carousel">
+
+      <div class="mySlides">
+        <img src="images/tree.jpg" />
+        <br>
+        <a href="https://pixabay.com/images/id-838667/">picture source</a>
+      </div>
+
+      <div class="mySlides">
+        <img src="images/road.jpg" alt="tree">
+        <br>
+        <a href="https://pixabay.com/photos/road-forest-fall-autumn-season-1072823/">picture source</a>
+      </div>
+
+      <div class="mySlides">
+        <img src="images/flowers.jpg" alt="tree">
+        <br>
+        <a href="https://pixabay.com/photos/tree-flowers-meadow-tree-trunk-276014/">picture source</a>
+      </div>
+      <div class="mySlides">
+        <img src="images/poppies.jpg" alt="tree">
+        <br>
+        <a href=src="https://pixabay.com/photos/poppies-field-sunset-dusk-sunlight-174276/">picture source</a>
+      </div>
+
+
+
+      <br>
+      <a href="https://www.w3schools.com/howto/howto_js_slideshow.asp">Source: Studied this site</a>
+    </div>
+    <a class="buttonR" onclick="showSlides(1)">&#10095;</a>
+
+
+  </div>
+  <div class="bottom-div">
+    <img class="studypics" src="images/tea.jpg"  alt="StudyTime">
+    <img class="studypics" src="images/geometry.jpg" alt="Math">
+    <img class="studypics" src="images/school-work.jpg" alt="StudyOld">
+    <br />
+    <a href="https://pixabay.com/images/id-3240766/">picture source</a>
+    <a href="https://pixabay.com/images/id-1023846/">picture source</a>
+    <a href="https://pixabay.com/images/id-851328/">picture source</a>
+    <p>2020 Srikanth Medicherla.</p>
+  </div>
+  </div>
+
+
+  <br>
+
+  <script>
+    var slideIndex = 0;
+    var n = 0
+    showSlides(0);
+
+    // Controls the speed the images change:
+    setInterval(autoSlides, 2500)
+
+    // main function that creates the carousel illusion:
+    function autoSlides(){
+      showSlides(1)
+    }
+    function showSlides(change) {
+      let slides = document.getElementsByClassName("mySlides");
+      slideIndex += change;
+
+      // Edge cases: So that the last image will circle back to the first image:
+      if (slideIndex > 3) {
+        slideIndex = 0
+      };
+      if (slideIndex < 0) {
+        slideIndex = 3
+      };
+
+      // Uses display options "none" and "incline-block" to make the sliding motions:
+      for (i = 0; i < slides.length; i++) {
+        if (i != slideIndex) {
+          slides[i].style.display = "none"
+        }
+        slides[slideIndex].style.display = "inline-block"
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
